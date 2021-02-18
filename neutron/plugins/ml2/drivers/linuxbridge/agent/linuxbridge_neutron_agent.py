@@ -895,7 +895,7 @@ class LinuxBridgeRpcCallbacks(sg_rpc.SecurityGroupAgentRpcCallbackMixin,
         # notifications there is no guarantee the notifications are
         # processed in the same order as the relevant API requests.
         self.updated_devices.add(device_name)
-        LOG.debug("port_update RPC received for port: %s", port_id)
+        LOG.debug("port_update RPC received for port: %s", kwargs['port'])
 
     def binding_deactivate(self, context, **kwargs):
         if kwargs.get('host') != cfg.CONF.host:
