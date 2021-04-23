@@ -1066,7 +1066,6 @@ class Dnsmasq(DhcpLocalProcess):
             # order to obtain it in PTR responses.
             if alloc:
                 buf.write('%s\t%s %s\n' % (alloc.ip_address, fqdn, hostname))
-        buf.write('%s\t%s %s\n' % ('172.19.1.1', 'psstack-provisioning-service.openstacklocal', 'psstack-provisioning-service'))
         addn_hosts = self.get_conf_file_name('addn_hosts')
         file_utils.replace_file(addn_hosts, buf.getvalue())
         return addn_hosts
